@@ -38,18 +38,31 @@ public class Main{
         System.out.println("Tu juagadro se encuetra en la casilla 0,0");
         System.out.println("Te puedes desplazar con la teclas W A S D");
         Scanner sc = new Scanner(System.in);
-        System.out.println("dime una letra: ");
-        char desplazamiento = sc.next().charAt(0);
-        System.out.println("La letra elegida es " + desplazamiento );
 
         int filaYoda = 0;
         int columnaYoda = 0;
-        matriz[filaYoda][columnaYoda] = YODA;
-        if (desplazamiento == 'D'){
-            columnaYoda = columnaYoda + 1;
+
+        for (int rep = 0; rep < 5; rep++) {
+            System.out.println("Dime una letra:");
+            char desplazamiento = sc.next().toUpperCase().charAt(0);
+            System.out.println("La letra elegida es " + desplazamiento);
+
+            if (desplazamiento == 'D') {
+                columnaYoda++;
+            } else if (desplazamiento == 'S') {
+                filaYoda++;
+            } else if (desplazamiento == 'W') {
+                filaYoda--;
+            } else if (desplazamiento == 'A'){
+                columnaYoda--;
+            }
+
             matriz[filaYoda][columnaYoda] = YODA;
         }
 
+
+
+        // imprimir la matriz
         for (int fila=0; fila< matriz.length; fila++){
             for (int columna=0 ; columna < matriz[fila].length; columna++){
                 System.out.print(matriz[fila][columna] + " ");
