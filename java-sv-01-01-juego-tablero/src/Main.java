@@ -42,10 +42,12 @@ public class Main{
         int filaYoda = 0;
         int columnaYoda = 0;
 
+
         for (int rep = 0; rep < 5; rep++) {
             System.out.println("Dime una letra:");
             char desplazamiento = sc.next().toUpperCase().charAt(0);
             System.out.println("La letra elegida es " + desplazamiento);
+            matriz[filaYoda][columnaYoda] = '*';
 
             if (desplazamiento == 'D') {
                 columnaYoda++;
@@ -56,19 +58,19 @@ public class Main{
             } else if (desplazamiento == 'A'){
                 columnaYoda--;
             }
-
             matriz[filaYoda][columnaYoda] = YODA;
-        }
-
-
-
-        // imprimir la matriz
-        for (int fila=0; fila< matriz.length; fila++){
-            for (int columna=0 ; columna < matriz[fila].length; columna++){
-                System.out.print(matriz[fila][columna] + " ");
+            // imprimir la matriz
+            for (int fila=0; fila< matriz.length; fila++){
+                for (int columna=0 ; columna < matriz[fila].length; columna++){
+                    System.out.print(matriz[fila][columna] + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
+
         }
+
+
+
 
 
     }
