@@ -41,9 +41,7 @@ public class Main{
 
         int filaYoda = 0;
         int columnaYoda = 0;
-
-
-        while (vidas > 0) {
+        while (vidas > 0 || matriz[filaYoda][columnaYoda] == 'F'){
             System.out.println("The quedan " + vidas + " vidas");
             System.out.print("Dime una letra:");
             char desplazamiento = sc.next().toUpperCase().charAt(0);
@@ -74,10 +72,5 @@ public class Main{
                 System.out.println();
             }
         }
-
-
-
-
-
     }
 }
