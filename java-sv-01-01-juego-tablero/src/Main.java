@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args ){
         char[][] matriz = new char [10][10];
-        int vidas = 10;
+        int vidas = 5;
         for (int fila=0 ; fila< matriz.length ; fila++) {
             for (int columna = 0; columna < matriz[fila].length; columna++) {
                 matriz[fila][columna] = '*';
@@ -43,8 +43,9 @@ public class Main{
         int columnaYoda = 0;
 
 
-        for (int rep = 0; rep < 5; rep++) {
-            System.out.println("Dime una letra:");
+        while (vidas > 0) {
+            System.out.println("The quedan " + vidas + " vidas");
+            System.out.print("Dime una letra:");
             char desplazamiento = sc.next().toUpperCase().charAt(0);
             System.out.println("La letra elegida es " + desplazamiento);
             matriz[filaYoda][columnaYoda] = '*';
@@ -58,6 +59,12 @@ public class Main{
             } else if (desplazamiento == 'A'){
                 columnaYoda--;
             }
+            if (matriz[filaYoda][columnaYoda] == 'M'){
+                vidas--;
+            }
+            if (matriz[filaYoda][columnaYoda] == 'P'){
+                vidas++;
+            }
             matriz[filaYoda][columnaYoda] = YODA;
             // imprimir la matriz
             for (int fila=0; fila< matriz.length; fila++){
@@ -66,7 +73,6 @@ public class Main{
                 }
                 System.out.println();
             }
-
         }
 
 
